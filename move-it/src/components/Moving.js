@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Form, Icon, Input, Button, DatePicker } from "antd";
+import { Form, Icon, Input, Button, DatePicker, message } from "antd";
 
 import "./moving.css";
 
@@ -12,8 +12,13 @@ class Moving extends Component {
       if (!err) {
         console.log("Received values of form: ", values);
         this.setState(values);
+        this.showMessage();
       }
     });
+  };
+
+  showMessage = () => {
+    message.info("Check the state or console");
   };
 
   render() {
